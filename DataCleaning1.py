@@ -5,7 +5,3 @@
 # from select import select
 
 #Connect to AWS s3
-a= 1
-b=1
-
-print(a + b)
