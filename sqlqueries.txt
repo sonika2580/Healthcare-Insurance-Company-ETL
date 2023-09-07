@@ -1,0 +1,96 @@
+drop database healthcareInsuranceCompany;
+drop table healthdata.groups
+drop table healthdata.patient_records
+drop table healthdata.subgroup
+
+create schema healthdata;
+
+create table healthdata.disease(
+     SubGrpID varchar not null,
+     Disease_ID int not null,
+     Disease_name varchar
+
+)
+
+select * from healthdata.disease
+
+
+
+create table healthdata.groups(
+    Country varchar,
+    premium_written int,
+    zipcode int,
+    Grp_Id varchar not null,
+    Grp_Name varchar,
+    Grp_Type varchar,
+    city varchar,
+    year int
+)
+
+select * from healthdata.groups
+
+create table healthdata.hospital(
+    Hospital_id varchar not null,
+    Hospital_name varchar,
+    city varchar,
+    state varchar,
+    country varchar
+)
+
+select * from healthdata.hospital
+
+
+
+create table healthdata.patient_records(
+    Patient_id int not null,
+    Patient_name varchar,
+    patient_gender varchar,
+    patient_birth_date date,
+    patient_phone varchar,
+    disease_name varchar,
+    city varchar,
+    hospital_id varchar not null
+)
+select * from healthdata.patient_records
+
+
+
+create table healthdata.subgroup(
+    SubGrpID varchar not null,
+    disease_id int not null,
+    disease_name varchar
+)
+select * from healthdata.subgroup
+
+create table healthdata.subscriber(
+    sub_id varchar not null,
+    first_name varchar,
+    last_name varchar,
+    Street varchar,
+    Birth_date date,
+    Gender varchar,
+    Phone varchar,
+    Country varchar,
+    City varchar,
+    ZipCode int,
+    Subgrp_id varchar,
+    Elig_ind varchar,
+    eff_date date,
+    term_date date
+
+
+)
+select * from healthdata.subscriber
+
+Create table healthdata.claims(
+    Claim_Or_Rejected varchar,
+    SUB_ID varchar not null,
+    claim_amount int,
+    claim_date date,
+    claim_id int,
+    claim_type varchar,
+    disease_name varchar,
+    patient_id int not null
+)
+
+select * from healthdata.claims
