@@ -1,6 +1,5 @@
 # configure AWS s3 to databricks
-spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.access.key", "AKIA5PN3TGK3VZVNX35J")
-spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3a.secret.key", "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")
+
 
 # s3 paths for all files
 
